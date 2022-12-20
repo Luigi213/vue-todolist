@@ -53,7 +53,7 @@ createApp({
         },
         itemChange(index){
             this.change = this.listObject[index];
-            if(this.change.done == false){
+            if(this.change.done === false){
                 this.change.done = true
             }
             else(
