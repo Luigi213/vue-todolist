@@ -13,14 +13,19 @@
         <div id="app">
 
             <div class="container">
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <div class="col-12">
-                        <h1>Vue todoolist</h1>
+                        <h1 class="text-center">Vue todoolist</h1>
                     </div>
-                    <div class="col-12">
-                        <ul class="list-unstyled">
-                            <li :class="(!list.done) ? 'text-decoration-line-through' : ''" v-for="(list, index) in listObject">
-                                {{ list.text }}
+                    <div class="col-10">
+                        <ul class="list-unstyled ">
+                            <li class="my-3 d-flex justify-content-between" :class="(!list.done) ? 'text-decoration-line-through' : ''" v-for="(list, index) in listObject">
+                                <div class="text">
+                                    {{ list.text }}
+                                </div>
+                                <div class="btn-delete">
+                                    <button type="button" class="btn btn-danger" @click="deleteObject(index)">X</button>
+                                </div>
                             </li>
                         </ul>
                     </div>
