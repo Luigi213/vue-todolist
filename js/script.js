@@ -44,6 +44,7 @@ createApp({
                 text: this.newObject,
                 done: false
             };
+            this.newObject = '';
             this.listObject.push(obj);
         }
     },
