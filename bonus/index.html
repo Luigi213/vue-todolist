@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-10">
                         <ul class="list-unstyled ">
-                            <li class="my-3 d-flex justify-content-between" :class="(!list.done) ? 'text-decoration-line-through' : ''" v-for="(list, index) in listObject">
+                            <li class="my-3 d-flex justify-content-between" :class="(list.done) ? 'text-decoration-line-through' : ''" @click="itemChange(index)" v-for="(list, index) in listObject">
                                 <div class="text">
                                     {{ index + 1 }} - {{ list.text }}
                                 </div>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-10 d-flex">
                         <input class="form-control" type="text" v-model="newObject" placeholder="Write new object">
-                        <button class="btn btn-outline-success" type="submit" @click="addObject()">Search</button>
+                        <button class="btn btn-outline-success" type="submit" @keyup="newObject" @click="addObject()">Search</button>
                     </div>
                 </div>
             </div>
