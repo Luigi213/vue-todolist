@@ -18,7 +18,11 @@
                         <h1>Vue todoolist</h1>
                     </div>
                     <div class="col-12">
-                        {{ listObject[listActive].text }}
+                        <ul class="list-unstyled">
+                            <li :class="(!list.done) ? 'text-decoration-line-through' : ''" v-for="(list, index) in listObject">
+                                {{ list.text }}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
