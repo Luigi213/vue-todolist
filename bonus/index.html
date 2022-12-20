@@ -19,8 +19,8 @@
                     </div>
                     <div class="col-10">
                         <ul class="list-unstyled ">
-                            <li class="my-3 d-flex justify-content-between" :class="(list.done) ? 'text-decoration-line-through' : ''" @click="itemChange(index)" v-for="(list, index) in listObject">
-                                <div class="text">
+                            <li class="my-3 d-flex justify-content-between" v-for="(list, index) in listObject">
+                                <div class="text" :class="(list.done) ? 'text-decoration-line-through' : ''" @click="itemChange(index)">
                                     {{ index + 1 }} - {{ list.text }}
                                 </div>
                                 <div class="btn-delete">
@@ -30,7 +30,7 @@
                         </ul>
                     </div>
                     <div class="col-10 d-flex">
-                        <input class="form-control" type="text" v-model="newObject" placeholder="Write new object">
+                        <input class="form-control" type="text" v-model="newObject" placeholder="Write new object" @keyup.enter="addObject()">
                         <button class="btn btn-outline-success" type="submit" @click="addObject()">Search</button>
                     </div>
                 </div>

@@ -18,7 +18,6 @@ createApp({
     data(){
         return {
             newObject: '',
-            change: null,
             listObject: [
                 {
                     text: 'Fare colazione',
@@ -52,13 +51,14 @@ createApp({
             this.listObject.push(obj);
         },
         itemChange(index){
-            this.change = this.listObject[index];
-            if(this.change.done === false){
-                this.change.done = true
+            let change = this.listObject[index];
+            if(change.done === false){
+                change.done = true
             }
             else(
-                this.change.done = false
+                change.done = false
             )
+            return change
         }
     }
 }).mount('#app')
